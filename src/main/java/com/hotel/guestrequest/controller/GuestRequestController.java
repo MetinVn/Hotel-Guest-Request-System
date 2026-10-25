@@ -36,7 +36,7 @@ import java.util.Locale;
 @CrossOrigin(origins = "${app.cors.allowed-origins:http://localhost:5173}")
 public class GuestRequestController {
 
-	private static final int MAX_PAGE_SIZE = 100;
+	private static final int MAX_PAGE_SIZE = 10;
 	private final GuestRequestService guestRequestService;
 
 	public GuestRequestController(GuestRequestService guestRequestService) {

@@ -12,7 +12,7 @@ function App() {
   const { history, error: historyError, addToHistory, removeFromHistory } = useHistory();
 
   return (
-    <main className="min-h-screen bg-slate-50/50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 py-10 px-4 sm:px-6 lg:px-8 font-sans antialiased transition-colors">
+    <main className="min-h-screen bg-neutral-50/50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 py-10 px-4 sm:px-6 lg:px-8 font-sans antialiased transition-colors">
       <div className="max-w-5xl mx-auto space-y-8">
         <Header activeTab={activeTab} onTabChange={setActiveTab} theme={theme} onToggleTheme={toggleTheme} onRefresh={() => setRefreshToken((token) => token + 1)} />
         <div className={`${activeTab === "dashboard" ? "block" : "hidden"}`}>

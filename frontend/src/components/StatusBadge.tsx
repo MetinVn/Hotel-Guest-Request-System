@@ -48,7 +48,7 @@ export function StatusBadge({ status, onChange, disabled }: IStatusBadgeProps) {
         ))}
       </select>
 
-      <ChevronDown className="pointer-events-none absolute right-1.5 top-1/2 -tranneutral-y-1/2 w-3 h-3 text-current opacity-60" />
+      <ChevronDown className="pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 text-current opacity-60" />
     </div>
   );
 }

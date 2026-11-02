@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
-@import "tailwindcss";
 @theme {
   /* 1. NEUTRAL: "Dark Silver" (Mapped to Zinc) - Sleek, metallic gray backgrounds */
   --color-neutral-50: var(--color-zinc-50);

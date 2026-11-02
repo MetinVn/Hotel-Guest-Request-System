@@ -45,7 +45,7 @@ export function HistoryView({ history, error, onRemove }: IHistoryViewProps) {
   return (
     <section className="space-y-6">
       {error && (
-        <div role="alert" className="flex items-start gap-3 rounded-lg bg-rose-50 dark:bg-rose-950/40 border border-rose-200/80 dark:border-rose-900 p-4 text-sm text-rose-700 dark:text-rose-300">
+        <div role="alert" className="flex items-start gap-3 rounded-lg bg-danger-50 dark:bg-danger-950/40 border border-danger-200/80 dark:border-danger-900 p-4 text-sm text-danger-700 dark:text-danger-300">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <p className="leading-relaxed">{error}</p>
         </div>
@@ -53,8 +53,8 @@ export function HistoryView({ history, error, onRemove }: IHistoryViewProps) {
 
       <section className="space-y-4">
         <div>
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Completed Request History</h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">History is stored in this browser and is not synchronized with the server.</p>
+          <h2 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Completed Request History</h2>
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">History is stored in this browser and is not synchronized with the server.</p>
         </div>
         {history.length > 0 && (
           <FilterSortPanel
@@ -73,9 +73,9 @@ export function HistoryView({ history, error, onRemove }: IHistoryViewProps) {
       </section>
 
       {filteredHistory.length === 0 ? (
-        <div className="text-center py-16 bg-white dark:bg-slate-800 border border-dashed border-slate-200 dark:border-slate-700 rounded-xl p-8">
-          <p className="text-sm font-medium text-slate-700 dark:text-slate-200">{history.length === 0 ? "No completed requests saved" : "No requests match these filters"}</p>
-          <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
+        <div className="text-center py-16 bg-white dark:bg-neutral-800 border border-dashed border-neutral-200 dark:border-neutral-700 rounded-xl p-8">
+          <p className="text-sm font-medium text-neutral-700 dark:text-neutral-200">{history.length === 0 ? "No completed requests saved" : "No requests match these filters"}</p>
+          <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">
             {history.length === 0 ? "Requests completed from the live dashboard will appear here." : "Try changing or clearing your history filters."}
           </p>
         </div>

@@ -67,21 +67,24 @@ export function DashboardView({ refreshToken, addToHistory, removeFromHistory }:
   const hasActiveFilters = search.trim() !== "" || debouncedSearch.trim() !== "" || statusFilter !== "ALL" || priorityFilter !== "ALL";
   const isInitialLoad = loading && totalElements === 0 && !hasActiveFilters;
   const isDatabaseCompletelyEmpty = totalElements === 0 && !hasActiveFilters && !loading && error === null;
-  const shouldShowFilters = !isDatabaseCompletelyEmpty;
+  const shouldShowFilters = !isDatabaseCompletelyEmpty && error === null;
 
   return (
     <div className="space-y-8">
       <CreateRequestFormCard onSubmit={addRequest} />
 
       {error && (
-        <div role="alert" className="flex items-start gap-3 rounded-lg bg-rose-50 dark:bg-rose-950/40 border border-rose-200/80 dark:border-rose-900 p-4 text-sm text-rose-700 dark:text-rose-300">
+        <div
+          role="alert"
+          className="flex items-start gap-3 rounded-lg bg-danger-50 dark:bg-danger-950/40 border border-danger-200/80 dark:border-danger-900 p-4 text-sm text-danger-700 dark:text-danger-300"
+        >
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <p className="leading-relaxed">{error}</p>
         </div>
       )}
 
       {isInitialLoad ? (
-        <div className="py-12 text-center text-sm font-medium text-slate-500 dark:text-slate-400 animate-pulse">Loading requests...</div>
+        <div className="py-12 text-center text-sm font-medium text-neutral-500 dark:text-neutral-400 animate-pulse">Loading requests...</div>
       ) : (
         <>
           <FilterSortPanel
@@ -99,9 +102,9 @@ export function DashboardView({ refreshToken, addToHistory, removeFromHistory }:
           />
           {shouldShowFilters && <Pagination currentPage={responsePage} totalPages={totalPages} totalElements={totalElements} loading={loading} onPageChange={setCurrentPage} />}
           {isDatabaseCompletelyEmpty ? (
-            <div className="rounded-xl border border-dashed border-slate-300 bg-white px-6 py-12 text-center shadow-sm dark:border-slate-700 dark:bg-slate-800">
-              <h2 className="text-base font-semibold text-slate-800 dark:text-slate-100">No requests yet</h2>
-              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Create your first guest request above to get started.</p>
+            <div className="rounded-xl border border-dashed border-neutral-300 bg-white px-6 py-12 text-center shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+              <h2 className="text-base font-semibold text-neutral-800 dark:text-neutral-100">No requests yet</h2>
+              <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Create your first guest request above to get started.</p>
             </div>
           ) : (
             <RequestList requests={requests} loading={loading} onStatusChange={processStatusChange} onDelete={removeRequest} />

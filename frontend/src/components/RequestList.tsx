@@ -16,29 +16,29 @@ export function RequestList({ requests, loading, onStatusChange, onDelete }: IRe
   if (loading) {
     return (
       <div className="py-16 text-center">
-        <p className="text-sm text-slate-400 dark:text-slate-500 animate-pulse">Fetching request queue...</p>
+        <p className="text-sm text-neutral-400 dark:text-neutral-500 animate-pulse">Fetching request queue...</p>
       </div>
     );
   }
 
   if (requests.length === 0) {
     return (
-      <div className="text-center py-16 bg-white dark:bg-slate-800 border border-dashed border-slate-200 dark:border-slate-700 rounded-xl p-8">
-        <p className="text-sm font-medium text-slate-700 dark:text-slate-200">No active requests</p>
-        <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">All guest inquiries are currently cleared.</p>
+      <div className="text-center py-16 bg-white dark:bg-neutral-800 border border-dashed border-neutral-200 dark:border-neutral-700 rounded-xl p-8">
+        <p className="text-sm font-medium text-neutral-700 dark:text-neutral-200">No active requests</p>
+        <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">All guest inquiries are currently cleared.</p>
       </div>
     );
   }
 
   return (
     <section className="flex flex-col items-stretch w-full">
-      <div className="flex gap-1 mb-4 border p-1 rounded-lg border-slate-200/80 dark:border-slate-700 bg-white dark:bg-slate-800 self-end shadow-sm">
+      <div className="flex gap-1 mb-4 border p-1 rounded-lg border-neutral-200/80 dark:border-neutral-700 bg-white dark:bg-neutral-800 self-end shadow-sm">
         <button
           type="button"
           onClick={() => setListLayout("grid")}
           aria-label="Show requests in grid layout"
           aria-pressed={listLayout === "grid"}
-          className={`p-1.5 rounded transition-colors ${listLayout === "grid" ? "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100" : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"}`}
+          className={`p-1.5 rounded transition-colors ${listLayout === "grid" ? "bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100" : "text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"}`}
         >
           <LayoutGrid size={18} />
         </button>
@@ -48,7 +48,7 @@ export function RequestList({ requests, loading, onStatusChange, onDelete }: IRe
           onClick={() => setListLayout("list")}
           aria-label="Show requests in list layout"
           aria-pressed={listLayout === "list"}
-          className={`p-1.5 rounded transition-colors ${listLayout === "list" ? "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100" : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"}`}
+          className={`p-1.5 rounded transition-colors ${listLayout === "list" ? "bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100" : "text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"}`}
         >
           <StretchHorizontal size={18} />
         </button>

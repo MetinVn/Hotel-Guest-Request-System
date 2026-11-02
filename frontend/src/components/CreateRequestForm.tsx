@@ -60,41 +60,41 @@ export function CreateRequestForm({ onSubmit }: ICreateRequestFormProps) {
   };
 
   const inputClass = (hasError?: string) =>
-    `w-full text-xs rounded-lg border px-3 py-2 outline-none transition-colors placeholder:text-slate-300 dark:placeholder:text-slate-500 bg-white dark:bg-slate-900 text-slate-900 dark:text-white ${hasError ? "border-rose-300 dark:border-rose-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" : "border-slate-200 dark:border-slate-700 focus:border-slate-400 dark:focus:border-slate-500 focus:ring-1 focus:ring-slate-400"}`;
+    `w-full text-xs rounded-lg border px-3 py-2 outline-none transition-colors placeholder:text-neutral-300 dark:placeholder:text-neutral-500 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white ${hasError ? "border-danger-300 dark:border-danger-800 focus:border-danger-500 focus:ring-1 focus:ring-danger-500" : "border-neutral-200 dark:border-neutral-700 focus:border-neutral-400 dark:focus:border-neutral-500 focus:ring-1 focus:ring-neutral-400"}`;
 
   return (
     <form noValidate onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         <div className="flex flex-col">
-          <label htmlFor="guestName" className="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+          <label htmlFor="guestName" className="block text-xs font-semibold text-neutral-700 dark:text-neutral-200 mb-1.5">
             Guest Name
-            <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 mt-0.5">Who is making the request?</span>
+            <span className="block text-[10px] font-normal text-neutral-500 dark:text-neutral-400 mt-0.5">Who is making the request?</span>
           </label>
           <input id="guestName" type="text" name="guestName" value={formData.guestName} onChange={handleChange} placeholder="e.g. John Doe" className={inputClass(errors.guestName)} />
           {errors.guestName && (
-            <p id="guestName-error" className="text-[11px] text-rose-600 mt-1">
+            <p id="guestName-error" className="text-[11px] text-danger-600 mt-1">
               {errors.guestName}
             </p>
           )}
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="roomNumber" className="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+          <label htmlFor="roomNumber" className="block text-xs font-semibold text-neutral-700 dark:text-neutral-200 mb-1.5">
             Room Number
-            <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 mt-0.5">Where to dispatch?</span>
+            <span className="block text-[10px] font-normal text-neutral-500 dark:text-neutral-400 mt-0.5">Where to dispatch?</span>
           </label>
           <input id="roomNumber" type="text" name="roomNumber" value={formData.roomNumber} onChange={handleChange} placeholder="e.g. 104" className={inputClass(errors.roomNumber)} />
           {errors.roomNumber && (
-            <p id="roomNumber-error" className="text-[11px] text-rose-600 mt-1">
+            <p id="roomNumber-error" className="text-[11px] text-danger-600 mt-1">
               {errors.roomNumber}
             </p>
           )}
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="requestPriority" className="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+          <label htmlFor="requestPriority" className="block text-xs font-semibold text-neutral-700 dark:text-neutral-200 mb-1.5">
             Priority
-            <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 mt-0.5">How urgently is this needed?</span>
+            <span className="block text-[10px] font-normal text-neutral-500 dark:text-neutral-400 mt-0.5">How urgently is this needed?</span>
           </label>
           <select id="requestPriority" name="requestPriority" value={formData.requestPriority} onChange={handleChange} className={inputClass(errors.requestPriority)}>
             {PRIORITY_LEVELS.map((priority) => (
@@ -104,16 +104,16 @@ export function CreateRequestForm({ onSubmit }: ICreateRequestFormProps) {
             ))}
           </select>
           {errors.requestPriority && (
-            <p id="requestPriority-error" className="text-[11px] text-rose-600 mt-1">
+            <p id="requestPriority-error" className="text-[11px] text-danger-600 mt-1">
               {errors.requestPriority}
             </p>
           )}
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="requestType" className="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+          <label htmlFor="requestType" className="block text-xs font-semibold text-neutral-700 dark:text-neutral-200 mb-1.5">
             Request Type
-            <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 mt-0.5">Category of the service.</span>
+            <span className="block text-[10px] font-normal text-neutral-500 dark:text-neutral-400 mt-0.5">Category of the service.</span>
           </label>
           <select id="requestType" name="requestType" value={formData.requestType} onChange={handleChange} className={inputClass(errors.requestType)}>
             <option value="">Select request type...</option>
@@ -124,16 +124,16 @@ export function CreateRequestForm({ onSubmit }: ICreateRequestFormProps) {
             ))}
           </select>
           {errors.requestType && (
-            <p id="requestType-error" className="text-[11px] text-rose-600 mt-1">
+            <p id="requestType-error" className="text-[11px] text-danger-600 mt-1">
               {errors.requestType}
             </p>
           )}
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="description" className="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+          <label htmlFor="description" className="block text-xs font-semibold text-neutral-700 dark:text-neutral-200 mb-1.5">
             Description
-            <span className="block text-[10px] font-normal text-slate-500 dark:text-slate-400 mt-0.5">Specific details or items needed.</span>
+            <span className="block text-[10px] font-normal text-neutral-500 dark:text-neutral-400 mt-0.5">Specific details or items needed.</span>
           </label>
           <textarea
             id="description"
@@ -144,20 +144,20 @@ export function CreateRequestForm({ onSubmit }: ICreateRequestFormProps) {
             className={`${inputClass(errors.description)} min-h-9.5 resize-y`}
           />
           {errors.description && (
-            <p id="description-error" className="text-[11px] text-rose-600 mt-1">
+            <p id="description-error" className="text-[11px] text-danger-600 mt-1">
               {errors.description}
             </p>
           )}
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
-        {serverError ? <p className="text-xs text-rose-600">{serverError}</p> : <span />}
+      <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-neutral-700">
+        {serverError ? <p className="text-xs text-danger-600">{serverError}</p> : <span />}
 
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-lg text-white bg-slate-900 dark:bg-blue-600 hover:bg-slate-800 dark:hover:bg-blue-500 disabled:opacity-60 transition-colors shadow-sm"
+          className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-lg text-white bg-neutral-900 dark:bg-primary-600 hover:bg-neutral-800 dark:hover:bg-primary-500 disabled:opacity-60 transition-colors shadow-sm"
         >
           {submitting ? "Adding..." : "Add Request"}
         </button>

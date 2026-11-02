@@ -1,32 +1,33 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-@theme {
-  /* 1. NEUTRAL: "Dark Silver" (Mapped to Zinc) - Sleek, metallic gray backgrounds */
-  --color-neutral-50: var(--color-zinc-50);
-  --color-neutral-100: var(--color-zinc-100);
-  --color-neutral-200: var(--color-zinc-200);
-  --color-neutral-300: var(--color-zinc-300);
-  --color-neutral-400: var(--color-zinc-400);
-  --color-neutral-500: var(--color-zinc-500);
-  --color-neutral-600: var(--color-zinc-600);
-  --color-neutral-700: var(--color-zinc-700);
-  --color-neutral-800: var(--color-zinc-800);
-  --color-neutral-900: var(--color-zinc-900);
-  --color-neutral-950: var(--color-zinc-950);
 
-  /* 2. PRIMARY: "Dark Orange" (Mapped to Orange) - For main buttons and active states */
-  --color-primary-50: var(--color-orange-50);
-  --color-primary-100: var(--color-orange-100);
-  --color-primary-200: var(--color-orange-200);
-  --color-primary-300: var(--color-orange-300);
-  --color-primary-400: var(--color-orange-400);
-  --color-primary-500: var(--color-orange-500);
-  --color-primary-600: var(--color-orange-600);
-  --color-primary-700: var(--color-orange-700);
-  --color-primary-800: var(--color-orange-800);
-  --color-primary-900: var(--color-orange-900);
-  --color-primary-950: var(--color-orange-950);
+@theme {
+  /* 1. NEUTRAL: "Enterprise White/Gray" (Mapped to Slate) - Clean, crisp backgrounds and text */
+  --color-neutral-50: var(--color-slate-50);
+  --color-neutral-100: var(--color-slate-100);
+  --color-neutral-200: var(--color-slate-200);
+  --color-neutral-300: var(--color-slate-300);
+  --color-neutral-400: var(--color-slate-400);
+  --color-neutral-500: var(--color-slate-500);
+  --color-neutral-600: var(--color-slate-600);
+  --color-neutral-700: var(--color-slate-700);
+  --color-neutral-800: var(--color-slate-800);
+  --color-neutral-900: var(--color-slate-900);
+  --color-neutral-950: var(--color-slate-950);
+
+  /* 2. PRIMARY: "Enterprise Blue" (Mapped to Blue) - Trustworthy, professional accents */
+  --color-primary-50: var(--color-blue-50);
+  --color-primary-100: var(--color-blue-100);
+  --color-primary-200: var(--color-blue-200);
+  --color-primary-300: var(--color-blue-300);
+  --color-primary-400: var(--color-blue-400);
+  --color-primary-500: var(--color-blue-500);
+  --color-primary-600: var(--color-blue-600);
+  --color-primary-700: var(--color-blue-700);
+  --color-primary-800: var(--color-blue-800);
+  --color-primary-900: var(--color-blue-900);
+  --color-primary-950: var(--color-blue-950);
 
   /* 3. DANGER (Mapped to Rose) - For errors and destructive actions */
   --color-danger-50: var(--color-rose-50);
@@ -41,11 +42,31 @@
   --color-danger-900: var(--color-rose-900);
   --color-danger-950: var(--color-rose-950);
 
-  /* 4. SUCCESS & WARNING (Mapped to Emerald and Amber) - For status badges */
+  /* 4. SUCCESS (Mapped to Emerald) - For Completed badges */
+  --color-success-50: var(--color-emerald-50);
+  --color-success-100: var(--color-emerald-100);
+  --color-success-200: var(--color-emerald-200);
+  --color-success-300: var(--color-emerald-300);
+  --color-success-400: var(--color-emerald-400);
   --color-success-500: var(--color-emerald-500);
   --color-success-600: var(--color-emerald-600);
+  --color-success-700: var(--color-emerald-700);
+  --color-success-800: var(--color-emerald-800);
+  --color-success-900: var(--color-emerald-900);
+  --color-success-950: var(--color-emerald-950);
+
+  /* 5. WARNING (Mapped to Amber) - For In Progress badges */
+  --color-warning-50: var(--color-amber-50);
+  --color-warning-100: var(--color-amber-100);
+  --color-warning-200: var(--color-amber-200);
+  --color-warning-300: var(--color-amber-300);
+  --color-warning-400: var(--color-amber-400);
   --color-warning-500: var(--color-amber-500);
   --color-warning-600: var(--color-amber-600);
+  --color-warning-700: var(--color-amber-700);
+  --color-warning-800: var(--color-amber-800);
+  --color-warning-900: var(--color-amber-900);
+  --color-warning-950: var(--color-amber-950);
 }
 
 @layer base {

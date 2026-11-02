@@ -41,33 +41,33 @@ export function FilterSortPanel({
   if (!visible) return null;
 
   return (
-    <section className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4">
-      <div className="flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-slate-700">
-        <Filter className="w-3.5 h-3.5 text-slate-400" />
-        <h2 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Filter &amp; Sort</h2>
+    <section className="bg-white dark:bg-neutral-800 p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-sm flex flex-col gap-4">
+      <div className="flex items-center gap-2 pb-2 border-b border-neutral-100 dark:border-neutral-700">
+        <Filter className="w-3.5 h-3.5 text-neutral-400" />
+        <h2 className="text-[10px] font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">Filter &amp; Sort</h2>
       </div>
 
       <div className="flex flex-col sm:flex-row sm:flex-wrap items-end gap-3 lg:gap-4 w-full">
         <div className="relative w-full sm:w-full lg:flex-1 lg:min-w-62.5">
-          <label htmlFor="request-search" className="block text-[10px] font-semibold text-slate-500 dark:text-slate-400 mb-1.5 ml-0.5 uppercase tracking-wider">
+          <label htmlFor="request-search" className="block text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5 ml-0.5 uppercase tracking-wider">
             Search
           </label>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 -tranneutral-y-1/2 w-4 h-4 text-neutral-400" />
             <input
               id="request-search"
               value={searchValue}
               onChange={(event) => onSearchChange(event.target.value)}
               type="text"
               placeholder={searchPlaceholder}
-              className="w-full pl-9 pr-4 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+              className="w-full pl-9 pr-4 py-2 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
             />
           </div>
         </div>
 
         {showStatusFilter && onStatusChange && (
           <div className="w-full sm:flex-1">
-            <label htmlFor="request-status-filter" className="block text-[10px] font-semibold text-slate-500 dark:text-slate-400 mb-1.5 ml-0.5 uppercase tracking-wider">
+            <label htmlFor="request-status-filter" className="block text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5 ml-0.5 uppercase tracking-wider">
               Status
             </label>
             <select
@@ -77,7 +77,7 @@ export function FilterSortPanel({
                 const value = event.currentTarget.value;
                 if (value === "ALL" || isRequestStatus(value)) onStatusChange(value);
               }}
-              className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-lg text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500/20 cursor-pointer"
+              className="w-full px-3 py-2 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-lg text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary-500/20 cursor-pointer"
             >
               <option value="ALL">All Statuses</option>
               {REQUEST_STATUSES.map((status) => (
@@ -90,7 +90,7 @@ export function FilterSortPanel({
         )}
 
         <div className="w-full sm:flex-1">
-          <label htmlFor="request-priority-filter" className="block text-[10px] font-semibold text-slate-500 dark:text-slate-400 mb-1.5 ml-0.5 uppercase tracking-wider">
+          <label htmlFor="request-priority-filter" className="block text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5 ml-0.5 uppercase tracking-wider">
             Priority
           </label>
           <select
@@ -100,7 +100,7 @@ export function FilterSortPanel({
               const value = event.currentTarget.value;
               if (value === "ALL" || isRequestPriority(value)) onPriorityChange(value);
             }}
-            className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-500/20 cursor-pointer"
+            className="w-full px-3 py-2 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-danger-500/20 cursor-pointer"
           >
             <option value="ALL">All Priorities</option>
             {PRIORITY_LEVELS.map((priority) => (
@@ -112,7 +112,7 @@ export function FilterSortPanel({
         </div>
 
         <div className="w-full sm:flex-1 lg:min-w-70">
-          <label htmlFor="request-sort-field" className="block text-[10px] font-semibold text-slate-500 dark:text-slate-400 mb-1.5 ml-0.5 uppercase tracking-wider">
+          <label htmlFor="request-sort-field" className="block text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5 ml-0.5 uppercase tracking-wider">
             Sort By
           </label>
           <div className="flex gap-2">
@@ -122,7 +122,7 @@ export function FilterSortPanel({
               onChange={(event) => {
                 if (isSortField(event.currentTarget.value)) onSortByChange(event.currentTarget.value);
               }}
-              className="flex-1 px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-lg text-sm cursor-pointer"
+              className="flex-1 px-3 py-2 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-lg text-sm cursor-pointer"
             >
               <option value="createdAt">Date created</option>
               <option value="id">Ticket ID</option>
@@ -132,7 +132,7 @@ export function FilterSortPanel({
               type="button"
               onClick={onSortOrderChange}
               aria-label={`Sort ${sortOrder === "asc" ? "descending" : "ascending"}`}
-              className="flex items-center justify-center px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shrink-0"
+              className="flex items-center justify-center px-3 py-2 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-lg text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors shrink-0"
             >
               <span className="hidden sm:inline">{sortOrder === "asc" ? "Ascending" : "Descending"}</span>
               {sortOrder === "asc" ? <ArrowUp className="ml-0 sm:ml-1.5 h-4 w-4" aria-hidden="true" /> : <ArrowDown className="ml-0 sm:ml-1.5 h-4 w-4" aria-hidden="true" />}

@@ -1,6 +1,17 @@
 # Hotel Guest Request System
 
-A full-stack request-management platform for hotel operations. Capture guest needs, prioritize service work, track fulfillment, and review completed requests through a responsive dashboard backed by a REST API and PostgreSQL.
+### What is this project?
+
+This application is built to solve a daily problem in hotel operations: keeping track of what guests need without losing the details. When guests call the front desk for extra pillows, a room repair, or a late checkout, staff need a reliable way to record and assign those tasks. Instead of using sticky notes or messy spreadsheets, this system gives hotel staff a clean dashboard to log, prioritize, and track every request until the guest is taken care of.
+
+### What does it do?
+
+- **Captures Needs Quickly:** Staff can instantly log the guest's name, room number, the specific request, and how urgent it is.
+- **Tracks Progress:** Requests move smoothly from "Pending" to "In Progress" and finally to "Completed," ensuring nothing is forgotten.
+- **Lightning-Fast Lookups:** If a guest calls back to check on their request, staff can instantly search the dashboard by room number or name.
+- **Maintains History:** Once a job is done, it is saved into a completed history log so the staff can review what was finished during their shift.
+
+---
 
 ## System Architecture
 

@@ -52,8 +52,8 @@ export function FilterSortPanel({
           <label htmlFor="request-search" className="block text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5 ml-0.5 uppercase tracking-wider">
             Search
           </label>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -tranneutral-y-1/2 w-4 h-4 text-neutral-400" />
+          <div className="relative flex items-center w-full">
+            <Search className="absolute left-3 w-4 h-4 text-neutral-400 pointer-events-none" />
             <input
               id="request-search"
               value={searchValue}

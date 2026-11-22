@@ -20,6 +20,7 @@ The system uses a layered backend and a component-oriented React frontend.
 - **Backend:** Java 17, Spring Boot, Spring Data JPA, and PostgreSQL. The backend uses an N-Tier Architecture that separates REST controllers, application services, repositories, entities, and DTOs.
 - **Frontend:** React with TypeScript, Vite, and Tailwind CSS v4. Focused components and custom hooks separate dashboard, history, request state, validation, and cross-store workflow concerns.
 - **Persistence:** PostgreSQL schema changes are versioned and applied with Flyway. Hibernate validates the migrated schema at startup.
+- **Messaging:** Apache Kafka through Spring for Apache Kafka, with a basic producer and consumer exchanging String messages on a single topic.
 
 ## Enterprise Patterns & Technical Highlights
 
@@ -44,6 +45,10 @@ History is browser-local and is not a server-side audit log or synchronized acro
 ### Frontend performance and presentation
 
 The `useDebounce` hook delays search requests until input settles, reducing redundant API queries. Responsive layouts adapt the dashboard controls and request cards to screen size. Tailwind CSS v4 provides class-based dark styling, with the selected theme persisted in browser storage.
+
+### Basic Kafka messaging
+
+A `POST /send` endpoint publishes a message to the `my-topic` topic through `KafkaTemplate`, and a `@KafkaListener` consumer in the same application receives it and writes it to the log. Connection and serialization settings come from the `spring.kafka` block in `application.yaml` through Spring Boot auto-configuration, with no custom factory classes. This is a basic proof-of-concept integration with String payloads and a single topic. It is not yet connected to the guest-request workflow.
 
 ## Core Components
 
